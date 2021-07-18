@@ -1,0 +1,14 @@
+.footer {
+    text-align: center;
+    background: rgb($secondary-color, 0.9);
+
+    p {
+        padding: 45px 0;
+        color: rgb($primary-color, 0.5);
+        font-size: 12px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}

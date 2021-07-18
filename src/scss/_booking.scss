@@ -1,0 +1,137 @@
+.booking__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.booking__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking__form {
+    max-width: 620px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.booking__field {
+    max-width: 300px;
+    width: 100%;
+    background: $quaternary-color;
+    padding: 22px 10px 22px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    height: 60px;
+    outline: none;
+    border: 1px solid transparent;
+    color: $secondary-color;
+    transition: 0.5s;
+
+    &::placeholder {
+        color: $secondary-color;
+    }
+    &:focus {
+        border: 1px solid $tertiary-color;
+    }
+}
+
+.booking__people {
+    appearance: none;
+    position: relative;
+}
+
+.booking__date {
+
+    &::before {
+        content: attr(data-placeholder);
+        width: 100%;
+    }
+
+    &:focus,
+    &:valid {
+
+        &::before {
+            display: none
+        }
+    }
+
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+}
+
+.booking__button {
+    width: 100%;
+}
+
+.booking__img {
+    padding-right: 130px;
+    margin-left: 50px;
+
+    &::before {
+        right: 5px;
+    }
+}
+
+.booking__text {
+    padding-top: 50px;
+    font-size: 12px;
+    color: rgb($secondary-color, 0.5);
+    line-height: 1.6em;
+    text-align: center;
+
+    span {
+        font-weight: 700;
+    }
+}
+
+
+@media (max-width: 1300px) {
+
+    .booking__container {
+        flex-direction: column;
+    }
+
+    .booking__form {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .booking__form {
+        flex-direction: column;
+    }
+
+    .booking__field {
+        width: 100%;
+    }
+
+    .booking__img {
+        padding-right: 100px;
+
+        &::before {
+            max-width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+
+    .booking__img {
+        padding-right: 50px;
+
+        &::before {
+            max-width: 100px;
+            height: 100px;
+        }
+    }
+}
