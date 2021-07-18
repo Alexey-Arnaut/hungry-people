@@ -1,0 +1,146 @@
+.contact__subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: $secondary-color;
+}
+
+.contact__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 50px auto 0;
+    width: 100%;
+}
+
+.contact__form-field {
+    max-width: 420px;
+    width: 100%;
+    background: $quaternary-color;
+    padding: 25px 20px;
+    border-radius: 5px;
+    transition: 0.5s;  
+    border: 1px solid transparent;
+    color: $secondary-color;
+
+    &::placeholder {
+        color: $secondary-color;
+    }
+
+    &:focus {
+        border: 1px solid $tertiary-color;
+    }
+}
+
+.contact__form-email {
+    margin: 0 10px;
+}
+
+.contact__form-message {
+    max-width: 1300px;
+    width: 100%;
+    margin: 10px 0;
+    resize: none;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: $tertiary-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $primary-color;
+        border-radius: 50px;
+
+        &:hover {
+            background-color: darken($primary-color, 20%);
+        }
+    }
+}
+
+.contact__form-items {
+    display: flex;
+}
+
+.contact__form-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.contact__form-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 8px;
+
+    svg {
+
+        path {
+            fill: $tertiary-color;
+        }
+    }
+}
+
+.contact__form-text {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.4em;
+    text-align: center;
+    color: rgb($secondary-color, 0.5);
+    transition: 0.5s;
+
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+.contact__form-button {
+    max-width: 600px;
+    width: 100%;
+}
+
+.contact__map {
+    max-width: 1920px;
+    margin: 100px auto 0; 
+    width: 100%;
+    height: 500px;
+}
+
+@media (max-width: 1310px) {
+    .contact__form {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact__form-field {
+        max-width: 100%;
+    }
+
+    .contact__form-email {
+        margin: 10px 0;
+    }
+
+    .contact__form-items {
+        margin: 20px 0;
+        order: 5;
+    }
+
+    .contact__form-button {
+        order: 4;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .contact__form-items {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contact__form-item {
+        margin-bottom: 20px;
+    }
+}
