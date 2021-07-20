@@ -161,7 +161,7 @@
     top: 10px;
     width: 30px;
     height: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     transition: 0.5s;
@@ -172,6 +172,7 @@
         height: 4px;
         background: $primary-color;
         border-radius: 10px;
+        transition: 0.5s;
 
         &::before,
         &::after {
@@ -183,6 +184,7 @@
             left: 0;
             right: 0;
             background: $primary-color;
+            transition: 0.5s;
         }
         &::before {
             top: -10px;
@@ -223,6 +225,10 @@
 
     .nav__list {
         display: none;
+    }
+
+    .header__menu-button {
+        display: flex;
     }
 
     .header--sticky {

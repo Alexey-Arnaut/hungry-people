@@ -688,9 +688,7 @@ img {
   top: 10px;
   width: 30px;
   height: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -706,6 +704,8 @@ img {
   height: 4px;
   background: #FFFFFF;
   border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .header__menu-button span::before, .header__menu-button span::after {
   position: absolute;
@@ -716,6 +716,8 @@ img {
   left: 0;
   right: 0;
   background: #FFFFFF;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .header__menu-button span::before {
   top: -10px;
@@ -750,6 +752,12 @@ img {
 @media (max-width: 1024px) {
   .nav__list {
     display: none;
+  }
+
+  .header__menu-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .header--sticky {
@@ -1496,22 +1504,26 @@ img {
           align-items: center;
 }
 
-.specialization__buttons {
-  padding: 45px 0;
+.specialization__dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 45px;
 }
 
-.specialization__button svg {
-  width: 30px;
-  height: 30px;
+.specialization__dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(229, 229, 229, 0.5);
+  border-radius: 50%;
+  margin-right: 10px;
 }
-.specialization__button svg path {
-  fill: #FFFFFF;
+.specialization__dot:last-child {
+  margin-right: 0;
 }
-.specialization__button:hover path {
-  fill: #E8C300;
-}
-.specialization__button:first-child {
-  margin-right: 40px;
+
+.specialization__dot--active {
+  background: #FFFFFF;
 }
 
 @media (max-width: 1440px) {

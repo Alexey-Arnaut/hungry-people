@@ -30,30 +30,21 @@ function menuFilter() {
 };
 
 function slider() {
-    const buttonPrev = document.querySelector('.specialization__button-prev');
-    const buttonNext = document.querySelector('.specialization__button-next');
-    let offset = 0
     const sliderLine = document.querySelector('.specialization__slider-line');
-    let itemWidth = document.querySelector('.specialization__slider-item').offsetWidth;
-    const sliderItems = document.querySelectorAll('.specialization__slider-item').length - 1;
+    const sliderDots = document.querySelectorAll('.specialization__dot');
 
-    buttonPrev.addEventListener('click', () => {
-        offset = offset - itemWidth;
-
-        if (offset < 0) {
-            offset = itemWidth * sliderItems;
-        };
-        console.log(offset);
-        sliderLine.style.left = -offset + 'px';
-    })
-
-    buttonNext.addEventListener('click', () => {
-        offset = offset + itemWidth;
-
-        if (offset > (itemWidth * sliderItems)) {
-            offset = 0;
-        };
-        sliderLine.style.left = -offset + 'px';
+    sliderDots.forEach(sliderDot => {
+        sliderDot.addEventListener('click', () => {
+            let tabId = sliderDot.getAttribute('data-dot');
+            let currentSlide = document.querySelector(tabId);
+    
+            sliderDots.forEach(sliderDot => {
+                sliderDot.classList.remove('specialization__dot--active');
+            })
+            sliderDot.classList.add('specialization__dot--active');
+    
+            sliderLine.style.left = -currentSlide.offsetLeft + 'px';
+        });
     });
 
 }
@@ -70,6 +61,7 @@ function navigation() {
             event.preventDefault();
 
             headerMenu.classList.remove('header__menu--active');
+            headerButton.classList.remove('header__menu-button--active')
             body.style.overflow = 'visible';
 
             const href = link.getAttribute('href');
@@ -92,6 +84,7 @@ function navigation() {
 
     headerButton.addEventListener('click', () => {
         headerMenu.classList.toggle('header__menu--active');
+        headerButton.classList.toggle('header__menu-button--active')
         
         if(headerMenu.classList.contains('header__menu--active')) {
             body.style.overflow = 'hidden';
@@ -101,7 +94,7 @@ function navigation() {
     })
 };
 
-
+window.addEventListener('resize', slider)
 menuFilter();
 slider();
 navigation();

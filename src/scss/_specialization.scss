@@ -55,31 +55,25 @@
     align-items: center;
 }
 
-.specialization__buttons {
-    padding: 45px 0;
+.specialization__dots {
+    display: flex;
+    margin-top: 45px;
 }
 
-.specialization__button {
+.specialization__dot {
+    width: 10px;
+    height: 10px;
+    background: rgb($quaternary-color, 0.5);
+    border-radius: 50%;
+    margin-right: 10px;
 
-    svg {
-        width: 30px;
-        height: 30px;
-
-        path {
-            fill: $primary-color;
-        }
+    &:last-child {
+        margin-right: 0;
     }
+}
 
-    &:hover {
-
-        path {
-            fill: $tertiary-color;
-        }
-    }
-
-    &:first-child {
-        margin-right: 40px;
-    }
+.specialization__dot--active {
+    background: $primary-color;
 }
 
 @media (max-width: 1440px) {
